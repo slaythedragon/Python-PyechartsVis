@@ -1,0 +1,3555 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-wordcloud.min.js"></script>
+
+    
+</head>
+<body>
+        <style>
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 12px 16px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .chart-container {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+    </style>
+    <div class="tab">
+            <button class="tablinks" onclick="showChart(event, '997b3b4b7a9a4e19b1dad4223de37516')">各岗位占比饼图</button>
+            <button class="tablinks" onclick="showChart(event, 'db163a7e9ef34a7cb72308efa0905305')">各岗位平均起薪柱状图</button>
+            <button class="tablinks" onclick="showChart(event, '69164670e50044b29693b9d8cf76192b')">各城市招聘量柱状图及平均薪资折线图组合</button>
+            <button class="tablinks" onclick="showChart(event, 'c5aa25d866154c30bdcf3ec454621a11')">各城市岗位薪资分布热力图</button>
+            <button class="tablinks" onclick="showChart(event, '4d48fa39871c4256abee6a526a4e6358')">数据科学岗位技能要求词云</button>
+            <button class="tablinks" onclick="showChart(event, 'd3654fc06b7644beaf0ca0e1d6e7a289')">数据科学工具要求排行柱状图</button>
+            <button class="tablinks" onclick="showChart(event, 'c44ea881f85149f580ad790364e4321f')">不同岗位对学历要求分布柱状图</button>
+            <button class="tablinks" onclick="showChart(event, '39d3ac94ef7a48b7b106699382f39c47')">不同岗位对工作经验要求分布柱状图</button>
+    </div>
+
+    <div class="box">
+                <div id="997b3b4b7a9a4e19b1dad4223de37516" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_997b3b4b7a9a4e19b1dad4223de37516 = echarts.init(
+            document.getElementById('997b3b4b7a9a4e19b1dad4223de37516'), 'white', {renderer: 'canvas'});
+        var option_997b3b4b7a9a4e19b1dad4223de37516 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "pie",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "java",
+                    "value": 5.94
+                },
+                {
+                    "name": "python",
+                    "value": 6.75
+                },
+                {
+                    "name": "\u4ea7\u54c1\u52a9\u7406",
+                    "value": 6.57
+                },
+                {
+                    "name": "\u4eba\u4e8b",
+                    "value": 6.66
+                },
+                {
+                    "name": "\u4f1a\u8ba1",
+                    "value": 6.72
+                },
+                {
+                    "name": "\u5e02\u573a\u8425\u9500",
+                    "value": 6.44
+                },
+                {
+                    "name": "\u6570\u636e\u79d1\u5b66",
+                    "value": 34.22
+                },
+                {
+                    "name": "\u7528\u6237\u8fd0\u8425",
+                    "value": 6.68
+                },
+                {
+                    "name": "\u7b97\u6cd5\u5de5\u7a0b\u5e08",
+                    "value": 6.72
+                },
+                {
+                    "name": "\u884c\u653f",
+                    "value": 6.72
+                },
+                {
+                    "name": "\u9500\u552e\u4e13\u5458",
+                    "value": 6.54
+                }
+            ],
+            "radius": [
+                "40%",
+                "75%"
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{b}: {c}%"
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "java",
+                "python",
+                "\u4ea7\u54c1\u52a9\u7406",
+                "\u4eba\u4e8b",
+                "\u4f1a\u8ba1",
+                "\u5e02\u573a\u8425\u9500",
+                "\u6570\u636e\u79d1\u5b66",
+                "\u7528\u6237\u8fd0\u8425",
+                "\u7b97\u6cd5\u5de5\u7a0b\u5e08",
+                "\u884c\u653f",
+                "\u9500\u552e\u4e13\u5458"
+            ],
+            "selected": {},
+            "show": true,
+            "left": "2%",
+            "top": "15%",
+            "orient": "vertical",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "title": [
+        {
+            "text": "\u5404\u5c97\u4f4d\u5360\u6bd4",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_997b3b4b7a9a4e19b1dad4223de37516.setOption(option_997b3b4b7a9a4e19b1dad4223de37516);
+    </script>
+                <div id="db163a7e9ef34a7cb72308efa0905305" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_db163a7e9ef34a7cb72308efa0905305 = echarts.init(
+            document.getElementById('db163a7e9ef34a7cb72308efa0905305'), 'white', {renderer: 'canvas'});
+        var option_db163a7e9ef34a7cb72308efa0905305 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u5404\u5e73\u5747\u8d77\u85aa",
+            "data": [
+                15528.0,
+                13918.0,
+                5920.0,
+                8595.0,
+                6600.0,
+                8972.0,
+                17436.0,
+                11881.0,
+                21676.0,
+                5446.0,
+                6677.0
+            ],
+            "barCategoryGap": "50%",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u5404\u5e73\u5747\u8d77\u85aa"
+            ],
+            "selected": {
+                "\u5404\u5e73\u5747\u8d77\u85aa": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "rotate": -15,
+                "margin": 8
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "java",
+                "python",
+                "\u4ea7\u54c1\u52a9\u7406",
+                "\u4eba\u4e8b",
+                "\u4f1a\u8ba1",
+                "\u5e02\u573a\u8425\u9500",
+                "\u6570\u636e\u79d1\u5b66",
+                "\u7528\u6237\u8fd0\u8425",
+                "\u7b97\u6cd5\u5de5\u7a0b\u5e08",
+                "\u884c\u653f",
+                "\u9500\u552e\u4e13\u5458"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u4e0d\u540c\u5c97\u4f4d\u5e73\u5747\u8d77\u85aa",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_db163a7e9ef34a7cb72308efa0905305.setOption(option_db163a7e9ef34a7cb72308efa0905305);
+    </script>
+                <div id="69164670e50044b29693b9d8cf76192b" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_69164670e50044b29693b9d8cf76192b = echarts.init(
+            document.getElementById('69164670e50044b29693b9d8cf76192b'), 'white', {renderer: 'canvas'});
+        var option_69164670e50044b29693b9d8cf76192b = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u62db\u8058\u91cf",
+            "data": [
+                1000,
+                398,
+                329,
+                157,
+                142,
+                86,
+                30,
+                16,
+                16,
+                15
+            ],
+            "barCategoryGap": "20%",
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "line",
+            "name": "\u5e73\u5747\u85aa\u8d44",
+            "connectNulls": false,
+            "yAxisIndex": 1,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "step": false,
+            "data": [
+                [
+                    "\u5317\u4eac",
+                    19732.0
+                ],
+                [
+                    "\u4e0a\u6d77",
+                    17555.0
+                ],
+                [
+                    "\u6df1\u5733",
+                    16872.0
+                ],
+                [
+                    "\u5e7f\u5dde",
+                    13968.0
+                ],
+                [
+                    "\u676d\u5dde",
+                    16894.0
+                ],
+                [
+                    "\u6210\u90fd",
+                    12081.0
+                ],
+                [
+                    "\u6b66\u6c49",
+                    10833.0
+                ],
+                [
+                    "\u897f\u5b89",
+                    12000.0
+                ],
+                [
+                    "\u5357\u4eac",
+                    12625.0
+                ],
+                [
+                    "\u82cf\u5dde",
+                    13600.0
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u62db\u8058\u91cf",
+                "\u5e73\u5747\u85aa\u8d44"
+            ],
+            "selected": {
+                "\u62db\u8058\u91cf": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "axis",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "cross"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "xAxis": [
+        {
+            "type": "category",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisPointer": {
+                "show": true,
+                "type": "shadow"
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u5317\u4eac",
+                "\u4e0a\u6d77",
+                "\u6df1\u5733",
+                "\u5e7f\u5dde",
+                "\u676d\u5dde",
+                "\u6210\u90fd",
+                "\u6b66\u6c49",
+                "\u897f\u5b89",
+                "\u5357\u4eac",
+                "\u82cf\u5dde"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "type": "value",
+            "name": "\u6570\u91cf",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisTick": {
+                "show": true,
+                "alignWithLabel": false,
+                "inside": false
+            },
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{value}"
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "min": 0,
+            "max": 1500,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        },
+        {
+            "type": "value",
+            "name": "\u85aa\u8d44",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{value}"
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "min": 10000,
+            "max": 20000,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u62db\u8058\u4e0e\u85aa\u8d44\u6392\u884c\u699c",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_69164670e50044b29693b9d8cf76192b.setOption(option_69164670e50044b29693b9d8cf76192b);
+    </script>
+                <div id="c5aa25d866154c30bdcf3ec454621a11" class="chart-container" style="width:1200px; height:800px;"></div>
+    <script>
+        var chart_c5aa25d866154c30bdcf3ec454621a11 = echarts.init(
+            document.getElementById('c5aa25d866154c30bdcf3ec454621a11'), 'white', {renderer: 'canvas'});
+        var option_c5aa25d866154c30bdcf3ec454621a11 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "heatmap",
+            "name": "\u5e73\u5747\u6700\u9ad8\u85aa\u8d44",
+            "data": [
+                [
+                    0,
+                    0,
+                    null
+                ],
+                [
+                    0,
+                    1,
+                    31089.43
+                ],
+                [
+                    0,
+                    2,
+                    27121.21
+                ],
+                [
+                    0,
+                    3,
+                    20250.0
+                ],
+                [
+                    0,
+                    4,
+                    25306.82
+                ],
+                [
+                    0,
+                    5,
+                    27000.0
+                ],
+                [
+                    0,
+                    6,
+                    20757.58
+                ],
+                [
+                    0,
+                    7,
+                    18000.0
+                ],
+                [
+                    0,
+                    8,
+                    17750.0
+                ],
+                [
+                    0,
+                    9,
+                    17727.27
+                ],
+                [
+                    0,
+                    10,
+                    null
+                ],
+                [
+                    0,
+                    11,
+                    null
+                ],
+                [
+                    0,
+                    12,
+                    null
+                ],
+                [
+                    0,
+                    13,
+                    18066.67
+                ],
+                [
+                    0,
+                    14,
+                    null
+                ],
+                [
+                    0,
+                    15,
+                    16000.0
+                ],
+                [
+                    0,
+                    16,
+                    null
+                ],
+                [
+                    0,
+                    17,
+                    null
+                ],
+                [
+                    0,
+                    18,
+                    13000.0
+                ],
+                [
+                    0,
+                    19,
+                    null
+                ],
+                [
+                    1,
+                    0,
+                    35000.0
+                ],
+                [
+                    1,
+                    1,
+                    26779.31
+                ],
+                [
+                    1,
+                    2,
+                    26600.0
+                ],
+                [
+                    1,
+                    3,
+                    26333.33
+                ],
+                [
+                    1,
+                    4,
+                    22962.5
+                ],
+                [
+                    1,
+                    5,
+                    20894.74
+                ],
+                [
+                    1,
+                    6,
+                    20472.22
+                ],
+                [
+                    1,
+                    7,
+                    19250.0
+                ],
+                [
+                    1,
+                    8,
+                    19181.82
+                ],
+                [
+                    1,
+                    9,
+                    19000.0
+                ],
+                [
+                    1,
+                    10,
+                    17500.0
+                ],
+                [
+                    1,
+                    11,
+                    16333.33
+                ],
+                [
+                    1,
+                    12,
+                    16000.0
+                ],
+                [
+                    1,
+                    13,
+                    15642.86
+                ],
+                [
+                    1,
+                    14,
+                    13500.0
+                ],
+                [
+                    1,
+                    15,
+                    13000.0
+                ],
+                [
+                    1,
+                    16,
+                    12000.0
+                ],
+                [
+                    1,
+                    17,
+                    12000.0
+                ],
+                [
+                    1,
+                    18,
+                    12000.0
+                ],
+                [
+                    1,
+                    19,
+                    12000.0
+                ],
+                [
+                    2,
+                    0,
+                    8000.0
+                ],
+                [
+                    2,
+                    1,
+                    8420.56
+                ],
+                [
+                    2,
+                    2,
+                    12517.24
+                ],
+                [
+                    2,
+                    3,
+                    7750.0
+                ],
+                [
+                    2,
+                    4,
+                    10884.21
+                ],
+                [
+                    2,
+                    5,
+                    8214.29
+                ],
+                [
+                    2,
+                    6,
+                    8590.91
+                ],
+                [
+                    2,
+                    7,
+                    6000.0
+                ],
+                [
+                    2,
+                    8,
+                    8200.0
+                ],
+                [
+                    2,
+                    9,
+                    7384.62
+                ],
+                [
+                    2,
+                    10,
+                    null
+                ],
+                [
+                    2,
+                    11,
+                    9000.0
+                ],
+                [
+                    2,
+                    12,
+                    null
+                ],
+                [
+                    2,
+                    13,
+                    8289.47
+                ],
+                [
+                    2,
+                    14,
+                    null
+                ],
+                [
+                    2,
+                    15,
+                    6000.0
+                ],
+                [
+                    2,
+                    16,
+                    null
+                ],
+                [
+                    2,
+                    17,
+                    null
+                ],
+                [
+                    2,
+                    18,
+                    null
+                ],
+                [
+                    2,
+                    19,
+                    null
+                ],
+                [
+                    3,
+                    0,
+                    null
+                ],
+                [
+                    3,
+                    1,
+                    20865.17
+                ],
+                [
+                    3,
+                    2,
+                    17608.7
+                ],
+                [
+                    3,
+                    3,
+                    10181.82
+                ],
+                [
+                    3,
+                    4,
+                    16104.65
+                ],
+                [
+                    3,
+                    5,
+                    14884.62
+                ],
+                [
+                    3,
+                    6,
+                    12340.91
+                ],
+                [
+                    3,
+                    7,
+                    11600.0
+                ],
+                [
+                    3,
+                    8,
+                    9450.0
+                ],
+                [
+                    3,
+                    9,
+                    11952.38
+                ],
+                [
+                    3,
+                    10,
+                    null
+                ],
+                [
+                    3,
+                    11,
+                    7333.33
+                ],
+                [
+                    3,
+                    12,
+                    14000.0
+                ],
+                [
+                    3,
+                    13,
+                    9230.77
+                ],
+                [
+                    3,
+                    14,
+                    12000.0
+                ],
+                [
+                    3,
+                    15,
+                    13000.0
+                ],
+                [
+                    3,
+                    16,
+                    7000.0
+                ],
+                [
+                    3,
+                    17,
+                    null
+                ],
+                [
+                    3,
+                    18,
+                    null
+                ],
+                [
+                    3,
+                    19,
+                    4000.0
+                ],
+                [
+                    4,
+                    0,
+                    5500.0
+                ],
+                [
+                    4,
+                    1,
+                    13430.0
+                ],
+                [
+                    4,
+                    2,
+                    11466.67
+                ],
+                [
+                    4,
+                    3,
+                    6400.0
+                ],
+                [
+                    4,
+                    4,
+                    10235.29
+                ],
+                [
+                    4,
+                    5,
+                    11384.62
+                ],
+                [
+                    4,
+                    6,
+                    8500.0
+                ],
+                [
+                    4,
+                    7,
+                    8666.67
+                ],
+                [
+                    4,
+                    8,
+                    5500.0
+                ],
+                [
+                    4,
+                    9,
+                    7750.0
+                ],
+                [
+                    4,
+                    10,
+                    6000.0
+                ],
+                [
+                    4,
+                    11,
+                    4000.0
+                ],
+                [
+                    4,
+                    12,
+                    7000.0
+                ],
+                [
+                    4,
+                    13,
+                    6896.55
+                ],
+                [
+                    4,
+                    14,
+                    null
+                ],
+                [
+                    4,
+                    15,
+                    7000.0
+                ],
+                [
+                    4,
+                    16,
+                    8000.0
+                ],
+                [
+                    4,
+                    17,
+                    null
+                ],
+                [
+                    4,
+                    18,
+                    9000.0
+                ],
+                [
+                    4,
+                    19,
+                    null
+                ],
+                [
+                    5,
+                    0,
+                    10000.0
+                ],
+                [
+                    5,
+                    1,
+                    20528.3
+                ],
+                [
+                    5,
+                    2,
+                    19735.85
+                ],
+                [
+                    5,
+                    3,
+                    15750.0
+                ],
+                [
+                    5,
+                    4,
+                    21040.0
+                ],
+                [
+                    5,
+                    5,
+                    13730.77
+                ],
+                [
+                    5,
+                    6,
+                    11382.35
+                ],
+                [
+                    5,
+                    7,
+                    18750.0
+                ],
+                [
+                    5,
+                    8,
+                    10000.0
+                ],
+                [
+                    5,
+                    9,
+                    11235.29
+                ],
+                [
+                    5,
+                    10,
+                    null
+                ],
+                [
+                    5,
+                    11,
+                    null
+                ],
+                [
+                    5,
+                    12,
+                    6000.0
+                ],
+                [
+                    5,
+                    13,
+                    11156.25
+                ],
+                [
+                    5,
+                    14,
+                    7000.0
+                ],
+                [
+                    5,
+                    15,
+                    14500.0
+                ],
+                [
+                    5,
+                    16,
+                    15500.0
+                ],
+                [
+                    5,
+                    17,
+                    null
+                ],
+                [
+                    5,
+                    18,
+                    10000.0
+                ],
+                [
+                    5,
+                    19,
+                    10000.0
+                ],
+                [
+                    6,
+                    0,
+                    20750.0
+                ],
+                [
+                    6,
+                    1,
+                    34765.0
+                ],
+                [
+                    6,
+                    2,
+                    30457.29
+                ],
+                [
+                    6,
+                    3,
+                    21750.0
+                ],
+                [
+                    6,
+                    4,
+                    29516.72
+                ],
+                [
+                    6,
+                    5,
+                    30260.56
+                ],
+                [
+                    6,
+                    6,
+                    23394.9
+                ],
+                [
+                    6,
+                    7,
+                    25466.67
+                ],
+                [
+                    6,
+                    8,
+                    20687.5
+                ],
+                [
+                    6,
+                    9,
+                    19233.33
+                ],
+                [
+                    6,
+                    10,
+                    14000.0
+                ],
+                [
+                    6,
+                    11,
+                    27416.67
+                ],
+                [
+                    6,
+                    12,
+                    25000.0
+                ],
+                [
+                    6,
+                    13,
+                    19458.82
+                ],
+                [
+                    6,
+                    14,
+                    14000.0
+                ],
+                [
+                    6,
+                    15,
+                    8428.57
+                ],
+                [
+                    6,
+                    16,
+                    null
+                ],
+                [
+                    6,
+                    17,
+                    null
+                ],
+                [
+                    6,
+                    18,
+                    8000.0
+                ],
+                [
+                    6,
+                    19,
+                    8500.0
+                ],
+                [
+                    7,
+                    0,
+                    null
+                ],
+                [
+                    7,
+                    1,
+                    25804.2
+                ],
+                [
+                    7,
+                    2,
+                    21450.55
+                ],
+                [
+                    7,
+                    3,
+                    13750.0
+                ],
+                [
+                    7,
+                    4,
+                    17537.5
+                ],
+                [
+                    7,
+                    5,
+                    20617.65
+                ],
+                [
+                    7,
+                    6,
+                    17022.73
+                ],
+                [
+                    7,
+                    7,
+                    20000.0
+                ],
+                [
+                    7,
+                    8,
+                    10000.0
+                ],
+                [
+                    7,
+                    9,
+                    10000.0
+                ],
+                [
+                    7,
+                    10,
+                    null
+                ],
+                [
+                    7,
+                    11,
+                    9000.0
+                ],
+                [
+                    7,
+                    12,
+                    null
+                ],
+                [
+                    7,
+                    13,
+                    10807.69
+                ],
+                [
+                    7,
+                    14,
+                    null
+                ],
+                [
+                    7,
+                    15,
+                    8000.0
+                ],
+                [
+                    7,
+                    16,
+                    4000.0
+                ],
+                [
+                    7,
+                    17,
+                    null
+                ],
+                [
+                    7,
+                    18,
+                    7000.0
+                ],
+                [
+                    7,
+                    19,
+                    null
+                ],
+                [
+                    8,
+                    0,
+                    30000.0
+                ],
+                [
+                    8,
+                    1,
+                    41089.95
+                ],
+                [
+                    8,
+                    2,
+                    39540.0
+                ],
+                [
+                    8,
+                    3,
+                    30200.0
+                ],
+                [
+                    8,
+                    4,
+                    41333.33
+                ],
+                [
+                    8,
+                    5,
+                    39500.0
+                ],
+                [
+                    8,
+                    6,
+                    33655.17
+                ],
+                [
+                    8,
+                    7,
+                    31250.0
+                ],
+                [
+                    8,
+                    8,
+                    15000.0
+                ],
+                [
+                    8,
+                    9,
+                    24777.78
+                ],
+                [
+                    8,
+                    10,
+                    32500.0
+                ],
+                [
+                    8,
+                    11,
+                    null
+                ],
+                [
+                    8,
+                    12,
+                    22500.0
+                ],
+                [
+                    8,
+                    13,
+                    24375.0
+                ],
+                [
+                    8,
+                    14,
+                    null
+                ],
+                [
+                    8,
+                    15,
+                    null
+                ],
+                [
+                    8,
+                    16,
+                    null
+                ],
+                [
+                    8,
+                    17,
+                    null
+                ],
+                [
+                    8,
+                    18,
+                    null
+                ],
+                [
+                    8,
+                    19,
+                    null
+                ],
+                [
+                    9,
+                    0,
+                    null
+                ],
+                [
+                    9,
+                    1,
+                    10450.0
+                ],
+                [
+                    9,
+                    2,
+                    8771.43
+                ],
+                [
+                    9,
+                    3,
+                    6750.0
+                ],
+                [
+                    9,
+                    4,
+                    9076.92
+                ],
+                [
+                    9,
+                    5,
+                    9153.85
+                ],
+                [
+                    9,
+                    6,
+                    6966.67
+                ],
+                [
+                    9,
+                    7,
+                    22500.0
+                ],
+                [
+                    9,
+                    8,
+                    5222.22
+                ],
+                [
+                    9,
+                    9,
+                    5888.89
+                ],
+                [
+                    9,
+                    10,
+                    5500.0
+                ],
+                [
+                    9,
+                    11,
+                    6500.0
+                ],
+                [
+                    9,
+                    12,
+                    null
+                ],
+                [
+                    9,
+                    13,
+                    6441.18
+                ],
+                [
+                    9,
+                    14,
+                    8000.0
+                ],
+                [
+                    9,
+                    15,
+                    null
+                ],
+                [
+                    9,
+                    16,
+                    10000.0
+                ],
+                [
+                    9,
+                    17,
+                    null
+                ],
+                [
+                    9,
+                    18,
+                    4500.0
+                ],
+                [
+                    9,
+                    19,
+                    3500.0
+                ],
+                [
+                    10,
+                    0,
+                    6333.33
+                ],
+                [
+                    10,
+                    1,
+                    14602.27
+                ],
+                [
+                    10,
+                    2,
+                    13078.43
+                ],
+                [
+                    10,
+                    3,
+                    10833.33
+                ],
+                [
+                    10,
+                    4,
+                    11575.76
+                ],
+                [
+                    10,
+                    5,
+                    11580.65
+                ],
+                [
+                    10,
+                    6,
+                    11477.27
+                ],
+                [
+                    10,
+                    7,
+                    8333.33
+                ],
+                [
+                    10,
+                    8,
+                    10600.0
+                ],
+                [
+                    10,
+                    9,
+                    8866.67
+                ],
+                [
+                    10,
+                    10,
+                    null
+                ],
+                [
+                    10,
+                    11,
+                    10333.33
+                ],
+                [
+                    10,
+                    12,
+                    6000.0
+                ],
+                [
+                    10,
+                    13,
+                    9388.89
+                ],
+                [
+                    10,
+                    14,
+                    10000.0
+                ],
+                [
+                    10,
+                    15,
+                    11600.0
+                ],
+                [
+                    10,
+                    16,
+                    14500.0
+                ],
+                [
+                    10,
+                    17,
+                    null
+                ],
+                [
+                    10,
+                    18,
+                    7000.0
+                ],
+                [
+                    10,
+                    19,
+                    5000.0
+                ]
+            ],
+            "label": {
+                "show": true,
+                "position": "inside",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u5e73\u5747\u6700\u9ad8\u85aa\u8d44"
+            ],
+            "selected": {
+                "\u5e73\u5747\u6700\u9ad8\u85aa\u8d44": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "rotate": -15,
+                "margin": 8
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "java",
+                "python",
+                "\u4ea7\u54c1\u52a9\u7406",
+                "\u4eba\u4e8b",
+                "\u4f1a\u8ba1",
+                "\u5e02\u573a\u8425\u9500",
+                "\u6570\u636e\u79d1\u5b66",
+                "\u7528\u6237\u8fd0\u8425",
+                "\u7b97\u6cd5\u5de5\u7a0b\u5e08",
+                "\u884c\u653f",
+                "\u9500\u552e\u4e13\u5458"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u4e1c\u839e",
+                "\u5317\u4eac",
+                "\u4e0a\u6d77",
+                "\u5357\u4eac",
+                "\u6df1\u5733",
+                "\u676d\u5dde",
+                "\u5e7f\u5dde",
+                "\u82cf\u5dde",
+                "\u897f\u5b89",
+                "\u6b66\u6c49",
+                "\u65e0\u9521",
+                "\u53a6\u95e8",
+                "\u73e0\u6d77",
+                "\u6210\u90fd",
+                "\u5927\u8fde",
+                "\u5929\u6d25",
+                "\u60e0\u5dde",
+                "\u6e05\u8fdc",
+                "\u77f3\u5bb6\u5e84",
+                "\u8d35\u9633"
+            ]
+        }
+    ],
+    "title": [
+        {
+            "text": "\u5404\u57ce\u5e02\u5c97\u4f4d\u85aa\u8d44\u5206\u5e03\u70ed\u529b\u56fe",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 5000,
+        "max": 50000,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        chart_c5aa25d866154c30bdcf3ec454621a11.setOption(option_c5aa25d866154c30bdcf3ec454621a11);
+    </script>
+                <div id="4d48fa39871c4256abee6a526a4e6358" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_4d48fa39871c4256abee6a526a4e6358 = echarts.init(
+            document.getElementById('4d48fa39871c4256abee6a526a4e6358'), 'white', {renderer: 'canvas'});
+        var option_4d48fa39871c4256abee6a526a4e6358 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "wordCloud",
+            "name": "\u5c97\u4f4d\u6280\u80fd\u8981\u6c42",
+            "shape": "circle",
+            "rotationRange": [
+                -90,
+                90
+            ],
+            "rotationStep": 45,
+            "girdSize": 20,
+            "sizeRange": [
+                20,
+                80
+            ],
+            "data": [
+                {
+                    "name": "\u6570\u636e\u5206\u6790",
+                    "value": 3106,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(109,38,145)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8fd0\u8425",
+                    "value": 2175,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(20,39,68)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u672c\u79d1",
+                    "value": 991,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(16,32,55)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6570\u5b66",
+                    "value": 843,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(49,94,35)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5546\u4e1a",
+                    "value": 738,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(15,88,95)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u76d1\u63a7",
+                    "value": 634,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(24,41,58)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7edf\u8ba1",
+                    "value": 634,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(160,99,141)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6307\u6807",
+                    "value": 599,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(5,53,157)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6570\u636e\u6316\u6398",
+                    "value": 586,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(41,27,145)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7edf\u8ba1\u5b66",
+                    "value": 563,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(10,87,66)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u51b3\u7b56",
+                    "value": 508,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(35,160,123)"
+                        }
+                    }
+                },
+                {
+                    "name": "SQL",
+                    "value": 506,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(21,142,85)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5efa\u6a21",
+                    "value": 492,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(76,152,70)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u589e\u957f",
+                    "value": 388,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(48,57,155)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u62a5\u8868",
+                    "value": 363,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(105,61,146)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u654f\u611f",
+                    "value": 361,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(21,119,24)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6d1e\u5bdf",
+                    "value": 345,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(55,69,79)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u53ef\u89c6\u5316",
+                    "value": 345,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(64,23,108)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6307\u6807\u4f53\u7cfb",
+                    "value": 331,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(57,58,9)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u884c\u4e3a",
+                    "value": 326,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(105,88,88)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7ecf\u8425",
+                    "value": 316,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(42,138,6)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8425\u9500",
+                    "value": 313,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(110,139,91)"
+                        }
+                    }
+                },
+                {
+                    "name": "Python",
+                    "value": 310,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(53,155,145)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u68b3\u7406",
+                    "value": 298,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(70,9,137)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u673a\u4f1a",
+                    "value": 288,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(137,137,8)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u654f\u611f\u5ea6",
+                    "value": 286,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(135,120,4)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u753b\u50cf",
+                    "value": 278,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(18,158,135)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4fe1\u606f",
+                    "value": 275,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(17,75,42)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6570\u636e\u5e93",
+                    "value": 260,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(81,113,58)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9500\u552e",
+                    "value": 260,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(148,150,8)"
+                        }
+                    }
+                },
+                {
+                    "name": "BI",
+                    "value": 257,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(69,159,49)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u54a8\u8be2",
+                    "value": 254,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(91,87,45)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5b9a\u671f",
+                    "value": 253,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(62,43,93)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u601d\u8003",
+                    "value": 237,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(63,121,51)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5f62\u6210",
+                    "value": 234,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(74,149,18)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u63a2\u7d22",
+                    "value": 231,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(17,74,28)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6218\u7565",
+                    "value": 226,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(132,94,8)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4e1a\u52a1\u90e8\u95e8",
+                    "value": 224,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(66,16,139)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4ea7\u51fa",
+                    "value": 218,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(146,74,59)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6d77\u91cf",
+                    "value": 213,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(90,10,109)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u667a\u80fd",
+                    "value": 208,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(71,160,81)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5316",
+                    "value": 205,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(11,125,25)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8de8\u90e8\u95e8",
+                    "value": 204,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(117,102,157)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u63d0\u4f9b\u6570\u636e",
+                    "value": 203,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(65,143,102)"
+                        }
+                    }
+                },
+                {
+                    "name": "R",
+                    "value": 194,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(85,73,74)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8f6c\u5316",
+                    "value": 190,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(38,26,55)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u914d\u5408",
+                    "value": 190,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(71,155,41)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7855\u58eb",
+                    "value": 185,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(12,78,107)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8bc6\u522b",
+                    "value": 184,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(70,100,101)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u62bd\u8c61",
+                    "value": 181,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(102,83,79)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u641c\u7d22",
+                    "value": 177,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(75,107,116)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6574\u7406",
+                    "value": 176,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(1,86,134)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6570\u636e\u4ed3\u5e93",
+                    "value": 176,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(150,144,4)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u63d0\u70bc",
+                    "value": 173,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(4,116,155)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5173\u6ce8",
+                    "value": 173,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(94,109,69)"
+                        }
+                    }
+                },
+                {
+                    "name": "AI",
+                    "value": 173,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(91,21,76)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4e13\u9898",
+                    "value": 168,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(122,24,134)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9884\u6d4b",
+                    "value": 168,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(59,64,57)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6e20\u9053",
+                    "value": 166,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(27,90,139)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u539f\u578b",
+                    "value": 164,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(33,77,53)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5f02\u5e38",
+                    "value": 158,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(5,112,101)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7279\u5f81",
+                    "value": 157,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(142,8,28)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u96f6\u552e",
+                    "value": 157,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(152,20,0)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u70b9",
+                    "value": 157,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(76,140,0)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u601d\u8def",
+                    "value": 155,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(99,56,115)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7edf\u8ba1\u5206\u6790",
+                    "value": 154,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(86,59,117)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u57cb\u70b9",
+                    "value": 151,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(45,102,115)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8fbe\u6210",
+                    "value": 150,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(17,114,81)"
+                        }
+                    }
+                },
+                {
+                    "name": "C++",
+                    "value": 149,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(81,113,114)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5173\u952e",
+                    "value": 148,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(157,115,50)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5b8c\u6574",
+                    "value": 147,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(153,104,13)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6570\u636e\u6a21\u578b",
+                    "value": 145,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(143,67,15)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u538b\u529b",
+                    "value": 143,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(89,25,19)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u654f\u9510",
+                    "value": 140,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(38,150,67)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6807\u7b7e",
+                    "value": 139,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(85,13,38)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7ade\u54c1",
+                    "value": 138,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(99,112,112)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6570\u636e\u62a5\u8868",
+                    "value": 137,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(90,7,151)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u81ea\u7136\u8bed\u8a00",
+                    "value": 137,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(6,38,70)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u63d0\u53d6",
+                    "value": 136,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(52,18,34)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u65b9\u6cd5\u8bba",
+                    "value": 135,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(118,85,72)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6e05\u6d17",
+                    "value": 135,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(13,19,11)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5229\u7528",
+                    "value": 134,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(57,50,122)"
+                        }
+                    }
+                },
+                {
+                    "name": "python",
+                    "value": 130,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(8,105,47)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u91cd\u70b9",
+                    "value": 129,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(72,17,49)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u65b9",
+                    "value": 129,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(155,96,43)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4ea7\u54c1\u5316",
+                    "value": 129,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(116,146,115)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u529e\u516c",
+                    "value": 129,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(93,129,14)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5f3a\u6709",
+                    "value": 127,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(86,25,143)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u89c6\u89c9",
+                    "value": 127,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(10,150,77)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6a21\u5f0f",
+                    "value": 126,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(45,21,12)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u98ce\u63a7",
+                    "value": 126,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(113,148,5)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u53ca\u65f6\u53d1\u73b0",
+                    "value": 124,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(111,14,116)"
+                        }
+                    }
+                },
+                {
+                    "name": "Excel",
+                    "value": 122,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(98,123,99)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u91c7\u96c6",
+                    "value": 122,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(7,44,144)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6d1e\u5bdf\u529b",
+                    "value": 121,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(132,121,148)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6c89\u6dc0",
+                    "value": 120,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(70,6,12)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u75db\u70b9",
+                    "value": 120,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(103,96,138)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u76d1\u6d4b",
+                    "value": 119,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(119,74,39)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7f16\u7a0b\u8bed\u8a00",
+                    "value": 119,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(31,76,77)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5236\u4f5c",
+                    "value": 119,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(61,116,147)"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "title": [
+        {
+            "text": "\u5c97\u4f4d\u6280\u80fd\u8981\u6c42",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_4d48fa39871c4256abee6a526a4e6358.setOption(option_4d48fa39871c4256abee6a526a4e6358);
+    </script>
+                <div id="d3654fc06b7644beaf0ca0e1d6e7a289" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_d3654fc06b7644beaf0ca0e1d6e7a289 = echarts.init(
+            document.getElementById('d3654fc06b7644beaf0ca0e1d6e7a289'), 'white', {renderer: 'canvas'});
+        var option_d3654fc06b7644beaf0ca0e1d6e7a289 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#CD1076",
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u6570\u636e\u5206\u6790\u5de5\u5177",
+            "data": [
+                899,
+                762,
+                495,
+                383,
+                318,
+                296,
+                256,
+                222,
+                189,
+                185
+            ],
+            "barCategoryGap": "20%",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u6570\u636e\u5206\u6790\u5de5\u5177"
+            ],
+            "selected": {
+                "\u6570\u636e\u5206\u6790\u5de5\u5177": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "rotate": -15,
+                "margin": 8
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "SQL",
+                "PYTHON",
+                "EXCEL",
+                "R",
+                "BI",
+                "C",
+                "HIVE",
+                "PPT",
+                "AI",
+                "TABLEAU"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u6570\u636e\u5206\u6790\u5de5\u5177\u6392\u884c",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_d3654fc06b7644beaf0ca0e1d6e7a289.setOption(option_d3654fc06b7644beaf0ca0e1d6e7a289);
+    </script>
+                <div id="c44ea881f85149f580ad790364e4321f" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_c44ea881f85149f580ad790364e4321f = echarts.init(
+            document.getElementById('c44ea881f85149f580ad790364e4321f'), 'white', {renderer: 'canvas'});
+        var option_c44ea881f85149f580ad790364e4321f = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "java",
+            "data": [
+                16.0,
+                48.0,
+                332.0,
+                null,
+                null
+            ],
+            "barCategoryGap": "20%",
+            "barGap": "0%",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "python",
+            "data": [
+                13.0,
+                35.0,
+                397.0,
+                5.0,
+                null
+            ],
+            "barCategoryGap": "20%",
+            "barGap": "0%",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u6570\u636e\u79d1\u5b66",
+            "data": [
+                100,
+                68,
+                1909,
+                198,
+                5
+            ],
+            "barCategoryGap": "20%",
+            "barGap": "0%",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u7b97\u6cd5\u5de5\u7a0b\u5e08",
+            "data": [
+                20,
+                2,
+                297,
+                127,
+                2
+            ],
+            "barCategoryGap": "20%",
+            "barGap": "0%",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "java",
+                "python",
+                "\u6570\u636e\u79d1\u5b66",
+                "\u7b97\u6cd5\u5de5\u7a0b\u5e08"
+            ],
+            "selected": {
+                "java": true,
+                "python": true,
+                "\u6570\u636e\u79d1\u5b66": true,
+                "\u7b97\u6cd5\u5de5\u7a0b\u5e08": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u4e0d\u9650",
+                "\u5927\u4e13",
+                "\u672c\u79d1",
+                "\u7855\u58eb",
+                "\u535a\u58eb"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u4e0d\u540c\u5c97\u4f4d\u5bf9\u5b66\u5386\u8981\u6c42\u5206\u5e03\u67f1\u72b6\u56fe",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_c44ea881f85149f580ad790364e4321f.setOption(option_c44ea881f85149f580ad790364e4321f);
+    </script>
+                <div id="39d3ac94ef7a48b7b106699382f39c47" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_39d3ac94ef7a48b7b106699382f39c47 = echarts.init(
+            document.getElementById('39d3ac94ef7a48b7b106699382f39c47'), 'white', {renderer: 'canvas'});
+        var option_39d3ac94ef7a48b7b106699382f39c47 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "java",
+            "data": [
+                27.0,
+                3.0,
+                2.0,
+                64.0,
+                212.0,
+                88.0,
+                null
+            ],
+            "barCategoryGap": "20%",
+            "barGap": "0%",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "python",
+            "data": [
+                50.0,
+                21.0,
+                2.0,
+                133.0,
+                209.0,
+                35.0,
+                null
+            ],
+            "barCategoryGap": "20%",
+            "barGap": "0%",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u6570\u636e\u79d1\u5b66",
+            "data": [
+                297,
+                124,
+                28,
+                489,
+                993,
+                343,
+                6
+            ],
+            "barCategoryGap": "20%",
+            "barGap": "0%",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u7b97\u6cd5\u5de5\u7a0b\u5e08",
+            "data": [
+                85,
+                29,
+                3,
+                98,
+                184,
+                48,
+                1
+            ],
+            "barCategoryGap": "20%",
+            "barGap": "0%",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "java",
+                "python",
+                "\u6570\u636e\u79d1\u5b66",
+                "\u7b97\u6cd5\u5de5\u7a0b\u5e08"
+            ],
+            "selected": {
+                "java": true,
+                "python": true,
+                "\u6570\u636e\u79d1\u5b66": true,
+                "\u7b97\u6cd5\u5de5\u7a0b\u5e08": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u4e0d\u9650",
+                "\u5728\u6821/\u5e94\u5c4a",
+                "1\u5e74\u4ee5\u4e0b",
+                "1-3\u5e74",
+                "3-5\u5e74",
+                "5-10\u5e74",
+                "10\u5e74\u4ee5\u4e0a"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u4e0d\u540c\u5c97\u4f4d\u5bf9\u7ecf\u9a8c\u8981\u6c42\u5206\u5e03\u67f1\u72b6\u56fe",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_39d3ac94ef7a48b7b106699382f39c47.setOption(option_39d3ac94ef7a48b7b106699382f39c47);
+    </script>
+    </div>
+
+    <script>
+    </script>
+    <script>
+        (function() {
+            containers = document.getElementsByClassName("chart-container");
+            if(containers.length > 0) {
+                containers[0].style.display = "block";
+            }
+        })()
+
+        function showChart(evt, chartID) {
+            let containers = document.getElementsByClassName("chart-container");
+            for (let i = 0; i < containers.length; i++) {
+                containers[i].style.display = "none";
+            }
+
+            let tablinks = document.getElementsByClassName("tablinks");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = "tablinks";
+            }
+
+            document.getElementById(chartID).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
